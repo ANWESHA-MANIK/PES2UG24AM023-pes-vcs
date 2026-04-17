@@ -158,14 +158,12 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
         free(full_obj);
         return -1;
     }
-    
-    // Step 8: fsync the directory
+    // Step 8: fsync the directory.
     int dir_fd = open(shard_dir, O_RDONLY);
     if (dir_fd >= 0) {
         fsync(dir_fd);
         close(dir_fd);
     }
-    
     free(full_obj);
     return 0;
 }
