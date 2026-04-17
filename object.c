@@ -277,7 +277,6 @@ int object_read(const ObjectID *id, ObjectType *type_out, void **data_out, size_
     
     memcpy(*data_out, file_data + header_len, actual_data_len);
     *len_out = actual_data_len;
-    
     free(file_data);
     return 0;
 }
