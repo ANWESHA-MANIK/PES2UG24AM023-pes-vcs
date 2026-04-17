@@ -130,10 +130,9 @@ int index_status(const Index *index) {
 // ─── TODO: Implement these ───────────────────────────────────────────────────
 
 // Load the index from .pes/index.
-//
-// HINTS - Useful functions:
+// HINTS - Useful functions 
 //   - fopen (with "r"), fscanf, fclose : reading the text file line by line
-//   - hex_to_hash                      : converting the parsed string to ObjectID
+//   - hex_to_hash                      :WILL CONVERT the parsed string to ObjectID
 //
 // Returns 0 on success, -1 on error.
 int index_load(Index *index) {
