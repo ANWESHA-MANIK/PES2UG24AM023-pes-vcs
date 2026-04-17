@@ -54,7 +54,7 @@ int index_remove(Index *index, const char *path) {
     return -1;
 }
 
-// Print the status of the working directory.
+// Print the status of the working Directory..
 //
 // Identifies files that are staged, unstaged (modified/deleted in working dir),
 // and untracked (present in working dir but not in index).
