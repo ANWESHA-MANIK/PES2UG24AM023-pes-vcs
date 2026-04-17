@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <openssl/evp.h>
 
-// ─── PROVIDED ────────────────────────────────────────────────────────────────
+// ─── PROVIDED ───────────────────
 
 void hash_to_hex(const ObjectID *id, char *hex_out) {
     for (int i = 0; i < HASH_SIZE; i++) {
@@ -59,7 +59,6 @@ int object_exists(const ObjectID *id) {
     return access(path, F_OK) == 0;
 }
 
-// ─── TODO: Implement these ──────────────────────────────────────────────────
 
 // Write an object to the store.
 //
