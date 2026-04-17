@@ -62,16 +62,17 @@ int commit_parse(const void *data, size_t len, Commit *commit_out) {
     *last_space = '\0';
     snprintf(commit_out->author, sizeof(commit_out->author), "%s", author_buf);
     commit_out->timestamp = ts;
-    p = strchr(p, '\n') + 1;  // skip author line
-    p = strchr(p, '\n') + 1;  // skip committer line
-    p = strchr(p, '\n') + 1;  // skip blank line
+    p = strchr(p, '\n') + 1;  // skip author lines
+    p = strchr(p, '\n') + 1;  // skip committer lines
+    p = strchr(p, '\n') + 1;  // skip blank lines
 
     snprintf(commit_out->message, sizeof(commit_out->message), "%s", p);
     return 0;
 }
 
-// Serialize a Commit struct to the text format.
-// Caller must free(*data_out).
+
+// Serialize a commit struct to the text format.
+// Caller must free(*data_out)
 int commit_serialize(const Commit *commit, void **data_out, size_t *len_out) {
     char tree_hex[HASH_HEX_SIZE + 1];
     char parent_hex[HASH_HEX_SIZE + 1];
